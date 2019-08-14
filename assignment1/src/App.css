@@ -1,0 +1,109 @@
+.wrapper {
+  border: 1px solid grey;
+  width: 1000px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+}
+h2 {
+  text-align: center;
+}
+.custom-header {
+  color: steelblue
+}
+button {
+  margin-bottom: 5px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 5px;
+}
+h3 {
+  text-align: center;
+}
+.featured-course {
+  border: 1px solid gray;
+  padding: 0px 0px 0px 5px;
+  box-shadow: 10px 10px 5px grey;
+
+  width: 30%;
+}
+table {
+  width: 100%;
+  background-color: black;
+  border-collapse: collapse;
+}
+th {
+  color: white;
+  font: 0.8em sans-serif;
+}
+tr {
+  height: 40px;
+}
+.black {
+  background-color: black;
+}
+.grey {
+  background-color: #383636;
+}
+td {
+  border-collapse: collapse;
+  width: 100px;
+  font: 0.8em sans-serif;
+  color: white;
+  text-align: center;
+}
+.course-catalog {
+  margin-right: 5px;
+  margin-left: 10px;
+}
+.featured-courses {
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  font: 0.7em sans-serif;
+  color:  #6e7170;
+}
+.cols1 {
+  width: 8.3%
+}
+.cols2 {
+  width: 16.7%
+}
+.cols3 {
+  width: 25%
+}
+.cols4 {
+  width: 33.3%
+}
+.cols5 {
+  width: 41.7%
+}
+.cols6 {
+  width: 50%
+}
+.cols7 {
+  width: 58.3%
+}
+.cols8 {
+  width: 66.7%
+}
+.cols9 {
+  width: 75%
+}
+.cols10 {
+  width: 83.3%
+}
+.cols11 {
+  width: 91.7%
+}
+.cols12 {
+  width: 100%
+}

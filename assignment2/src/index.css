@@ -1,0 +1,22 @@
+.book {
+  text-align : center;
+  border: 1px solid red;
+  width: 30%
+}
+p{
+  margin-block-start: 0%;
+  margin-block-end: 0%;
+}
+
+.App {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly
+}
+
+.button-red {
+  background: rgb(202, 60, 60); /* this is a maroon */
+}
+.button-blue {
+  background: rgb(66, 184, 221); /* this is a light blue */
+  }
