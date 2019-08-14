@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-
-const books = [
+import Book from './components/book';
+export const books = [
   {
     "author": "Frank Herbert",
     "title": "Dune",
@@ -19,27 +19,29 @@ const books = [
 
 ]
 
-function App() {
+
+
+class App extends React.Component {
+  constructor(props:any) {
+    super(props);
+    this.state = {
+      showDescription: false
+    }
+  }
+  render() {
   return (
     <div className="App">
-        {getBooks()}
+     {getBooks()}
     </div>
-  );
+  )
+  };
+
+  
+}
+const getBooks = ()=> {
+  return books.map(book=><Book book={book}></Book>)
 }
 
-const getBooks = ()=>{
-  return books.map((book)=>{
-    return (
-      <div className="book">
-        <p>{book.title}</p>
-        <p>{book.author}</p>
-        <p>{book.summary}</p>
-        <button className="btn btn-primary">Show Details</button><br/>
-        <button className="btn btn-danger">Hide Details</button>
-      </div>
 
-    )
-  })
-}
 
 export default App;
