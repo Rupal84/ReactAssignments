@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
-class EditEmployee extends React.Component {
+class AddEmployee extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      empId: "",
       empName: "",
       age: "",
       salary: "",
@@ -59,20 +60,15 @@ class EditEmployee extends React.Component {
     let achievements = e.target.value;
     this.setState({ achievements: achievements });
   };
-  updateEmployee = () => {
+  addEmployee = () => {
     var formJSON = {
-      empId: this.props.match.params.empId,
       empName: this.state.empName,
       age: this.state.age,
       salary: this.state.salary,
       achievements: this.state.achievements
     };
     axios
-      .put(
-        "http://localhost:2000/updateEmployeeDetails/" +
-          this.props.match.params.empId,
-        formJSON
-      )
+      .post("http://localhost:2000/InsertEmployee/", formJSON)
       .then(response => {
         this.setState({ successMessage: response.data.message, error: "" });
         console.log(response.data);
@@ -88,18 +84,8 @@ class EditEmployee extends React.Component {
   render() {
     return (
       <div style={{ width: 500, margin: "0px auto" }}>
-        <h3 className="text-center">
-          The selected ID is {this.props.match.params.empId}
-        </h3>
+        <h3 className="text-center">Add Employee</h3>
         <form>
-          <div className="form-group">
-            <label>Employee Id:</label>
-            <input
-              className="form-control"
-              disabled
-              value={this.props.match.params.empId}
-            />
-          </div>
           <div className="form-group">
             <label>Name:</label>
             <input
@@ -143,11 +129,11 @@ class EditEmployee extends React.Component {
           </div>
           <button
             type="button"
-            onClick={this.updateEmployee}
+            onClick={this.addEmployee}
             className="btn btn-success"
             disabled={!this.state.formValid}
           >
-            Update
+            Add Employee
           </button>
           <br />
           <span className="text-success">{this.state.successMessage}</span>
@@ -156,4 +142,4 @@ class EditEmployee extends React.Component {
     );
   }
 }
-export default EditEmployee;
+export default AddEmployee;
